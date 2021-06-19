@@ -1,4 +1,4 @@
-### **Segue-se uma explicação detalhada do código.** 
+### **Explicação detalhada do código:** 
 
 Os comandos 
 
