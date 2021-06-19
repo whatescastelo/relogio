@@ -64,6 +64,73 @@ usuário digite um valor e clique em enviar ou enter, ela será atribuída à ho
 independente da hora que esteja sendo mostrada no visor do LCD, ela será trocada pelo valor que o usuário colocou através da porta serial. Se esse valor for maior que 23, a hora receberá 
 00. O `Serial.println(hora);` serve apenas para mostrar no Monitor serial o valor que o usuário digitou na porta serial, para que ele tenha certeza que digitou o valor correto.
 
+O comando `lcd.setCursor(5, 0);` serve para posicionar o cursor na coluna 5 e na primeira linha. Isso faz com que a hora seja mostrada no centro do visor do LCD.
+ Os próximos comandos do código são
+ 
+ `stringAuxiliar = String(hora);`
+ 
+  `if (hora<10){`
+  
+  `stringAuxiliar = String("0"+stringAuxiliar);`  
+    
+  `}`
+  
+  `lcd.print(stringAuxiliar);`
+  
+  O `stringAuxiliar = String(hora);` faz a variável stringAuxiliar receber a hora, que foi programada inicialmente em byte, em formato string. Isso é importante, pois, nas próximas linhas do código, a hora precisará ser tratada como número, mas para mostrar no visor do LCD, ela precisa estar no formato string
+  
+  A função if serve para verificar se a hora é menor que 10. Caso essa condição seja verdadeira, a variável `stringAuxiliar` receberá, antes do valor da hora, o número 0. Isso fará com que a hora tenha sempre dois números. Por exemplo, se a hora for 6, será mostrado “06”.
+
+O comando `lcd.print(stringAuxiliar);` é usado para mostrar o valor da hora no visor do LCD. Lembrando que o valor da hora está armazenado na variável stringAuxiliar.
+
+Após esses comandos é colocado o comando `lcd.print(":");`, que serve apenas para mostrar no visor do LCD dois pontos (:). Esses dois pontos serão responsáveis por separar a hora do minuto.
+
+Os próximos comandos do codigo são:
+
+`stringAuxiliar = String(minuto);`
+
+ ` if (minuto<10){`
+ 
+  `	stringAuxiliar = String("0"+stringAuxiliar);`
+  
+  `}`
+  
+  `lcd.print(stringAuxiliar);`
+  
+  `delay(1000);`
+  
+  O `stringAuxiliar = String(minuto);` faz a variável stringAuxiliar receber o minuto, que foi programada inicialmente em byte, em formato string, pelos mesmos motivos explicados anteriormente no caso da hora.
+  
+  O if é usado para verificar se o valor do minuto é menor que 10. Se essa condição for verdadeira, a variável `stringAuxiliar` receberá, antes do valor do minuto, o número 0. Isso fará com que o minuto tenha sempre dois números. Por exemplo, se for 8, será mostrado “08”.
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
