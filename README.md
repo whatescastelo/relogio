@@ -133,11 +133,14 @@ Por fim, as últimas linhas de código são
   
   `}`
 
+O `seg++` faz com a valor do segundo seja acrescido de 1 a cada looping, que como vimos irá ocorrer de um em um segundo. Apesar de não ser mostrado no Visor do LCD, os segundos estão sendo contados.  
 
+O comando `if (seg>59)` é usado aqui para quando a contagem dos segundos chegar a 60, o minuto ser acrescido de 1, ou seja, soma-se 1 ao seu valor. Essa alteração no minuto será mostrado no visor. Também, cada vez que o valor do segundo chegar a 60, ele receberá novamente o valor 0.
+  
+A função `if (minuto>59)` faz com que quando o valor do minuto chegue a 60, some-se 1 ao valor da hora, e o valor do minuto se torne 0 novamente, iniciando assim uma nova contagem.
+  
+Por fim, a função `if(hora>23)` é usada para fazer com que a hora se torne “0” quando o seu valor for 24, e assim começar a contagem da hora novamente, a partir do 0.
 
-  
-  
-  
   
   
   
