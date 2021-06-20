@@ -103,8 +103,35 @@ Os próximos comandos do codigo são:
   
   O if é usado para verificar se o valor do minuto é menor que 10. Se essa condição for verdadeira, a variável `stringAuxiliar` receberá, antes do valor do minuto, o número 0. Isso fará com que o minuto tenha sempre dois números. Por exemplo, se for 8, será mostrado “08”.
 
+O comando `lcd.print(stringAuxiliar);`, assim como no caso da hora, é usado para mostrar o valor do minuto no visor do LCD. Esse valor será mostrado depois da hora e dos dois pontos (:). Por exemplo, se a hora for 14 e o minuto 7, será mostrado “14:07”.
 
+O `delay(1000);` faz com que o looping, que ocorre muito rapidamente, ocorra de um em um segundo. Entre outras palavras, ele faz com que o programa espere 1 segundo para ler a próxima linha de código. Isso será muito importante para que a hora seja mostrada corretamente, e os segundos contados de um em um, a cada novo looping. 
 
+Por fim, as últimas linhas de código são
+
+`seg++;`
+
+`if (seg>59){`
+
+ `minuto++;`
+ 
+  `seg=0;`
+  
+  `}`
+  
+  `if (minuto>59){`
+  
+ `hora++;`
+ 
+ `minuto=0;`
+ 
+ `}`
+ 
+ `if(hora>23){`
+ 
+  `hora=0;`
+  
+  `}`
 
 
 
